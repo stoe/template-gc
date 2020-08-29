@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 name: release
 
@@ -9,16 +9,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Unshallow
-        run: git fetch --prune --unshallow
-      - name: Set up Go
-        uses: actions/setup-go@v1
+      - uses: actions/checkout@v2
+
+      - run: git fetch --prune --unshallow
+
+      - uses: actions/setup-go@v1
         with:
           go-version: 1.14.x
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v1
+
+      - uses: goreleaser/goreleaser-action@v1
         with:
           version: latest
         env:
