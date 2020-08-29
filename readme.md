@@ -1,6 +1,6 @@
 # template-gc
 
-> A template for Golang CLIs.
+> A template for Golang CLI apps.
 
 ## Install
 
